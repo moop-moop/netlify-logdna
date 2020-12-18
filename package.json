@@ -1,0 +1,30 @@
+{
+  "name": "netlify-logdna",
+  "version": "1.0.0",
+  "description": "Serverless function examples and LogDNA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moop-moop/netlify-logdna.git"
+  },
+  "keywords": [
+    "logdna",
+    "netlify"
+  ],
+  "author": "moop-moop",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moop-moop/netlify-logdna/issues"
+  },
+  "homepage": "https://github.com/moop-moop/netlify-logdna#readme",
+  "dependencies": {
+    "@logdna/logger": "^2.1.2",
+    "isomorphic-unfetch": "^3.1.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^2.69.10"
+  }
+}

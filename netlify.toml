@@ -1,0 +1,33 @@
+[build]
+  functions = "serverless"
+
+[dev]
+  functions = "serverless"
+  publish = "out"
+  framework = "#static"
+
+[[redirects]]
+  from = "/logtest"
+  to = "/.netlify/functions/logtest"
+  force = true
+  status = 200
+
+[[redirects]]
+  from = "/loggertest"
+  to = "/.netlify/functions/loggertest"
+  force = true
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    X-Header-Source = "netlify.toml"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
+    X-Header-Source = "netlify.toml"
