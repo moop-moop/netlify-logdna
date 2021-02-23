@@ -1,22 +1,11 @@
 [build]
   functions = "serverless"
+  publish = "public"
 
 [dev]
   functions = "serverless"
-  publish = "out"
+  publish = "public"
   framework = "#static"
-
-[[redirects]]
-  from = "/logtest"
-  to = "/.netlify/functions/logtest"
-  force = true
-  status = 200
-
-[[redirects]]
-  from = "/loggertest"
-  to = "/.netlify/functions/loggertest"
-  force = true
-  status = 200
 
 [[headers]]
   for = "/*"

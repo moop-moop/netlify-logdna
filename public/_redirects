@@ -1,0 +1,7 @@
+# fallbacks for any requests we do not want to attempt to redirect via the next matching rule
+/always404/* /404 404
+
+/logtest /.netlify/functions/logtest 200
+
+# proxy to function to lookup paths for redirection that matched no static files
+/* /.netlify/functions/loggertest 200

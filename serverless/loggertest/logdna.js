@@ -4,10 +4,12 @@ const options = {
   env: "moop-moop",
   app: "loggertest",
   hostname: "Netlify",
+  level: "info", // default level if not set in request
+  tags: ["netlify", "function"],
   indexMeta: true,
 };
-const logdna_token = process.env.LOGDNA_API_KEY;
-const logger = createLogger(logdna_token, options);
+
+const logger = createLogger(process.env.LOGDNA_API_KEY, options);
 
 // Override console methods to send logs to both LogDNA and stdout/stderr
 const { log: consoleLog, error: consoleError } = console;
