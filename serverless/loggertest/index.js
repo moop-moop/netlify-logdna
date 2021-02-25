@@ -14,20 +14,33 @@ exports.handler = async (event) => {
     const uriString = encodeURI(rawURIString);
 
     // Your code here
-    console.log(`${s}: Info log for ${uriString}`);
-    console.log({
-      s: s,
-      uri: uriString,
-      example: "this is a sample object log",
-      nest: {
-        bird: {
-          type: "robin",
-          state: "Wisconsin",
+    console.log(`${s}: Info log for ${uriString}`, {
+      meta: {
+        s: s,
+        uri: uriString,
+        example: "this is a sample object log",
+        nest: {
+          bird: {
+            type: "robin",
+            state: "Wisconsin",
+          },
+          food: "worm",
         },
-        food: "worm",
       },
     });
-    console.error(`${s}: Error log for ${uriString}`);
+    // console.log({
+    //   s: s,
+    //   uri: uriString,
+    //   example: "this is a sample object log",
+    //   nest: {
+    //     bird: {
+    //       type: "robin",
+    //       state: "Wisconsin",
+    //     },
+    //     food: "worm",
+    //   },
+    // });
+    // console.error(`${s}: Error log for ${uriString}`);
 
     // Ensure logs have been flushed to LogDNA before finishing
     await once(logger, "cleared");
