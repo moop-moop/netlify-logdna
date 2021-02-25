@@ -12,11 +12,12 @@ exports.handler = async (event, context) => {
     const rawURIString = event.queryStringParameters.uri || event.path;
     // sanitize input uri
     const uriString = encodeURI(rawURIString);
+    const cxt = context;
 
     // Your code here
     console.log(`${s}: Info log for ${uriString}`, {
       meta: {
-        context: JSON.stringify(context),
+        cxt: cxt,
         s: s,
         uri: uriString,
         example: "this is a sample object log",
