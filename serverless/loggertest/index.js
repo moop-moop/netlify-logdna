@@ -5,7 +5,7 @@ const { error: consoleError } = console;
 console.log = logInfo;
 console.error = logError;
 
-exports.handler = async (event) => {
+exports.handler = async (event, context) => {
   try {
     logger.on("error", consoleError);
     const s = encodeURI(event.queryStringParameters.s);
@@ -16,6 +16,7 @@ exports.handler = async (event) => {
     // Your code here
     console.log(`${s}: Info log for ${uriString}`, {
       meta: {
+        context: JSON.stringify(context),
         s: s,
         uri: uriString,
         example: "this is a sample object log",
