@@ -27,11 +27,11 @@ const { log: consoleLog, error: consoleError } = console;
 exports.logger = logger;
 
 exports.logInfo = (message, ...args) => {
-  logger.log(message);
-  consoleLog(message, ...args);
+  logger.log(message, ...args);
+  consoleLog(message);
 };
 
 exports.logError = (message, ...args) => {
-  logger.error(message);
-  consoleError(message, ...args);
+  logger.error(message, ...args);
+  consoleError(message);
 };
